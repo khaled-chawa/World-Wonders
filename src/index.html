@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khaled Chawa School NEA</title>
+    <script src="./auth/firebase.js" type="module"></script>
+    <script src="./landingPage/three.js" type="module"></script>
+    <script src="./script.js" type="module"></script>
+    <link rel="stylesheet" href="./landingPage/style.css">
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+
+    <section class="section">
+        
+        <button class="hamburger">
+            <div class="bar"></div>
+        </button>
+
+        <nav class="nav">
+            <button class="active" >Home</button>
+            <button onclick="document.location='./contactPage/index.html'">Contact</button>
+            <button id="play">Play</button>
+            <button id="signOut">Sign Out</button>
+        </nav>
+
+        <h1 class="planet">Khaled Chawa</h1>
+        <div class="loading-bar"></div>
+
+    </section>
+
+    <section class="section section-2">
+        <h2>Geoguessr</h2>
+
+        <div>
+            <p class="paragraph">
+                <a href="https://www.geoguessr.com/" target="_blank">Geoguessr.com</a> is a game that shows the player a google street view image and asks them to guess where they are in the world. I enjoyed this game very much, however I saw a few things in it that bothered me, so I decided to recreate it. If you have any questions please feel free to <a href="/contactPage/index.html">contact</a> me.
+            </p>
+        </div>
+        
+    </section>
+  </body>
+</html>

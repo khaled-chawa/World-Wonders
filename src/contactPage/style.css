@@ -1,0 +1,144 @@
+@font-face {
+    font-family: myFont;
+    src: url('../../public/coolvetica.rg-regular.otf');
+}
+
+html {
+    background-image: url('../../public/background.png');
+    background-size: contain;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    margin: 0;
+    font-family: myFont;
+    min-height: 100vh;
+}
+
+.hamburger {
+    display: block;
+    position: absolute;
+    right: 0;
+    margin-right: 1vw;
+    width: 42px;
+    height: 8vh;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1vh;
+    background-color: #fef7ff;
+    margin: 1vh 0px;
+    transition: 0.2s;
+}
+
+.hamburger.is-active .bar {
+    display: none;
+}
+
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-9px, 0px);
+}
+
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-9px, 0px);
+}
+
+.nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 110%;
+    margin-top: 9vh;
+    width: 20vw;
+    height: 100vh;
+    font-family: myFont;
+    font-size: 5.5vmin;
+    transition: 0.2s;
+}
+
+.nav.is-active {
+    left:  85%;
+}
+
+.nav button {
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: #fef7ff;
+    background: none;
+    border: none;
+    font-family: myFont;
+    font-size: 5.5vmin;
+}
+
+.nav button:hover {
+    cursor:  pointer;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.contactMe {
+    color: #fef7ff;
+    margin: 0;
+    padding: 3px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 50vh;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #fef7ff;
+}
+
+.inputBox span {
+    padding: 5px;
+    padding-left: 0;
+    font-size: 1.5rem;
+    color: #0b0d41;
+}
+
+.inputBox input,
+.inputBox textarea {
+    color: #0b0d41;
+    background: none;
+    border: 1px solid #0b0d41;
+    border-radius: 3px;
+    resize: none;
+    padding: 8px;
+    font-size: 1rem;
+    font-family: myFont;
+}
+
+.inputBox textarea {
+    height: 23vh;
+    font-family: myFont;
+}
+
+.inputBox .sendButton {
+    color: #fef7ff;
+    background-color: #0b0d41;
+    margin-top: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}

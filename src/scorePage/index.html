@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>score</title>
+    <script src="script.ts" type="module"></script>
+    <script src="../script.js"  type="module"></script>
+    <script src="../auth/firebase.js"  type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="hamburger">
+        <div class="bar"></div>
+    </button>
+
+    <nav class="nav">
+        <button onclick="document.location='../index.html'">Home</button>
+        <button onclick="document.location='../contactPage/index.html'">Contact</button>
+        <button id="play" >Play</button>
+        <button id="signOut">Sign Out</button>
+    </nav>
+
+    <div id="msg"></div>
+
+    <div id="googleMap"></div>
+
+    <div id="points"></div>
+
+    <div id="scorebar"></div>
+    
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo82RMI9Mc-mXNnr-ZyxH8TaXN2q0LrPk&callback=myMap"
+    defer
+    ></script>
+</body>
+</html>

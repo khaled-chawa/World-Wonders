@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="../script.js" type="module"></script>
+        <script src="../auth/firebase.js"  type="module"></script>
+</head>
+<body>
+
+    <button class="hamburger">
+        <div class="bar"></div>
+    </button>
+
+    <nav class="nav">
+        <button onclick="document.location='../index.html'" >Home</button>
+        <button class="active">Contact</button>
+        <button id="play" >Play</button>
+        <button id="signOut">Sign Out</button>
+    </nav>
+
+    <div class="contactForm">
+
+        <h2 class="contactMe">Contact me ;)</h2>
+
+        <form action="https://formsubmit.co/f477d0fa95fe404bec9794ac115a9e15" method="POST">
+            <div class="inputBox">
+                <span>Name</span>
+                <input type="text" name="name" required placeholder="Molly Adams">
+
+                <span>Email</span>
+                <input type="email" name="email" required placeholder="example@email.com">
+
+                <span>Type your message...</span>
+                <textarea name="message" required></textarea>
+
+                <input class="sendButton" type="submit" name="" value="Send Message">
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>

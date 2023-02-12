@@ -1,0 +1,55 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#googleMap {
+    height: 33vh;
+    width: 28vw;
+    margin: 4px;
+    border-radius: 4px;
+    position: fixed !important;
+    bottom: 6vh;
+    right: 0;
+    transition: width 0.5s, height 0.5s;
+    z-index: 9;
+    /* opacity: 0; */
+}
+
+#googleMap:hover {
+    height: 38vh;
+    width: 33vw;
+}
+
+[aria-label="Map"] {
+    cursor: crosshair !important;
+}
+
+#pano {
+    height: 100%;
+    /* opacity: 0; */
+}
+
+#button {
+    height: 5vh;
+    width: 28vw;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    margin: 4px;
+    border-radius: 20px;
+    border: none;
+    color: #fef7ff;
+    background-image: url('../../public/background.png');
+    background-size: contain;
+    cursor: pointer;
+    transition: width 0.5s, height 0.5s;
+}
+
+#button:hover {
+    height:  5.5vh;
+    width: 30vw;
+}
