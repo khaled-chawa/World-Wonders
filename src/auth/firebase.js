@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "../../node_modules/firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithRedirect, signOut } from "firebase/auth";
 
 // Your web app's Firebase configuration
