@@ -68,7 +68,7 @@ html {
 }
 
 .hamburger.is-active:before {
-    transform: rotate(-45deg) translate(-9px, 0px);
+    transform: rotate(-45deg) translate(-10px, 0px);
 }
 
 .nav {
