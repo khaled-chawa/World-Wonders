@@ -25,7 +25,7 @@ auth.useDeviceLanguage()
 
 // Listen for sign in/out
 // If signed in, get profile pic and display sign out button
-let signedIn = false
+let signedIn
 const signout = document.getElementById('signOut')
 
 auth.onAuthStateChanged(user => {
@@ -55,4 +55,5 @@ play.addEventListener('click', async () => {
 // Listen for clicks on signout button, once clicked sign the user out
 signout.addEventListener('click', async () => {
   signOut(auth)
+  window.alert('You have been signed out')
 })
