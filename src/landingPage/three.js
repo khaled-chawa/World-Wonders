@@ -1,7 +1,6 @@
 import * as THREE from 'three'
 import * as dat from 'dat.gui'
 import gsap from  'gsap'
-import Stats from 'stats.js'
 
 import particleVertexShader from './shaders/particles/vertex.glsl'
 import particleFragmentShader from './shaders/particles/fragment.glsl'
@@ -53,13 +52,9 @@ scene.add(overlay)
  * Loaders
  */
 const loadingManger = new THREE.LoadingManager(
-    // Loaded
+    // After it loaded
     () => {
         gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0 })
-    },
-
-    // Progress
-    () => {
     }
 )
 
@@ -223,15 +218,11 @@ window.addEventListener('scroll', () => {
 /**
  * Animate
  */
-const stats = new Stats()
-document.body.appendChild( stats.dom )
 
 const clock = new THREE.Clock()
 let oldElapsedTime = 0
 
 const tick = () => {
-
-    stats.begin()
 
    const elapsedTime = clock.getElapsedTime()
    const deltaTime = elapsedTime - oldElapsedTime
@@ -250,6 +241,5 @@ const tick = () => {
    // Call tick again on the next frame 
    window.requestAnimationFrame(tick)
 
-   stats.end()
 }
 tick()
