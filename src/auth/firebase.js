@@ -45,6 +45,7 @@ auth.onAuthStateChanged(user => {
 const play = document.getElementById('play')
 
 play.addEventListener('click', async () => {
+  console.log(signedIn)
   if (signedIn) {
     document.location='../gamePage/index.html'
   } else {
@@ -53,7 +54,9 @@ play.addEventListener('click', async () => {
 })
 
 // Listen for clicks on signout button, once clicked sign the user out
+const popup = document.querySelector('.popup')
+
 signout.addEventListener('click', async () => {
   signOut(auth)
-  window.alert('You have been signed out')
+  popup.classList.add('is-active')
 })

@@ -3,6 +3,12 @@
     src: url('../../public/coolvetica.rg-regular.otf');
 }
 
+:root  {
+    --white: #fef7ff;
+    --navy: #0b0d41;
+    --light-purple: #7689f6;
+}
+
 html {
     background-image: url('../../public/background.png');
     background-size: contain;
@@ -15,6 +21,45 @@ body {
     margin: 0;
     font-family: myFont;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    bottom: 2%;
+    align-items: center;
+    background-color: var(--white);
+    color: var(--navy);
+    font-size: 2.5vmin;
+    width: 40vw;
+    height: 4vh;
+    border-radius: 4px;
+    justify-content: space-between;
+}
+
+.signedOut {
+    margin: 3px;
+}
+
+.okay {
+    background-color: var(--navy);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    padding: 3px;
+    height: 80%;
+    width: 10%;
+    margin: 3px;
+}
+
+.okay:hover {
+    cursor: pointer;
+}
+
+.popup.is-active {
+    display: flex;
 }
 
 .hamburger {
@@ -36,7 +81,7 @@ body {
     display: block;
     width: 100%;
     height: 7px;
-    background-color: #fef7ff;
+    background-color: var(--white);
     margin: 1vh 0px;
     transition: 0.2s;
 }
@@ -75,7 +120,7 @@ body {
     text-align: center;
     margin-bottom: 16px;
     text-decoration: none;
-    color: #fef7ff;
+    color: var(--white);
     background: none;
     border: none;
     font-family: myFont;
@@ -95,7 +140,7 @@ body {
 }
 
 .contactMe {
-    color: #fef7ff;
+    color: var(--white);
     margin: 0;
     padding: 3px;
     text-align: center;
@@ -109,21 +154,21 @@ body {
     height: 50vh;
     padding: 10px;
     border-radius: 4px;
-    background-color: #fef7ff;
+    background-color: var(--white);
 }
 
 .inputBox span {
     padding: 5px;
     padding-left: 0;
     font-size: 1.5rem;
-    color: #0b0d41;
+    color: var(--navy);
 }
 
 .inputBox input,
 .inputBox textarea {
-    color: #0b0d41;
+    color: var(--navy);
     background: none;
-    border: 1px solid #0b0d41;
+    border: 1px solid var(--navy);
     border-radius: 3px;
     resize: none;
     padding: 8px;
@@ -137,8 +182,8 @@ body {
 }
 
 .inputBox .sendButton {
-    color: #fef7ff;
-    background-color: #0b0d41;
+    color: var(--white);
+    background-color: var(--navy);
     margin-top: 8px;
     border-radius: 3px;
     cursor: pointer;
