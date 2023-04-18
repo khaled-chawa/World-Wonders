@@ -16,7 +16,22 @@ const mtFuji = { lat: 35.412492, lng: 138.758761 }
 const colosseum = { lat: 41.891787, lng: 12.491410 }
 const angkorWat = { lat: 13.412421, lng: 103.868274 }
 
-const places =  [ leaningTowerOfPisa, burjKhalifa, eiffelTower, statueOfLiberty, tajMahal, goldenGateBridge, pyramids, rio, pigeonRocks, gardensByTheBay, stBasilsCathedral, mtFuji, colosseum, angkorWat ]
+const places =  [
+  leaningTowerOfPisa,
+  burjKhalifa,
+  eiffelTower,
+  statueOfLiberty,
+  tajMahal,
+  goldenGateBridge,
+  pyramids,
+  rio,
+  pigeonRocks,
+  gardensByTheBay,
+  stBasilsCathedral,
+  mtFuji,
+  colosseum,
+  angkorWat
+]
 const place = Math.round(Math.random() * places.length)
 const place_serialized = JSON.stringify(places[place])
 localStorage.setItem('location', place_serialized)
