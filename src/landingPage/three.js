@@ -19,7 +19,7 @@ const parameters = {
 }
 
 /**
- * Base
+ * Base (part of the basic setup)
  */
 // canvas
 const canvas = document.querySelector('canvas.webgl')
