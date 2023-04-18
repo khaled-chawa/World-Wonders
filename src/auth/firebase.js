@@ -53,7 +53,7 @@ play.addEventListener('click', async () => {
   }
 })
 
-// Listen for clicks on signout button, once clicked sign the user out
+// Listen for clicks on signout button, once clicked sign the user out and add 'is-active' to class name
 const popup = document.querySelector('.popup')
 
 signout.addEventListener('click', async () => {
