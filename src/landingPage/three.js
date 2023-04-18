@@ -57,6 +57,7 @@ const loadingManger = new THREE.LoadingManager(
     }
 )
 
+// Load in texture for Earth
 const textureLoader = new THREE.TextureLoader(loadingManger)
 const EarthMapTexture = textureLoader.load(earthMapTexture)
 
