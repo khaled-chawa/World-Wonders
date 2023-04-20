@@ -1,3 +1,4 @@
+// Calculate distance in kilometers between two coordinates
 function haversine_distance(mk1, mk2) {
   var R = 6371.0710; // Radius of the Earth in kilometers
   var rlat1 = mk1.position.lat() * (Math.PI/180); // Convert degrees to radians
@@ -31,7 +32,7 @@ function myMap() {
     }
     )
 
-  // Adds line between two markers
+  // Adds a line connecting two markers
   const line = new google.maps.Polyline({ path: [place_deserialized, guess_deserialized], map })
     
   // Use users profile pic to indicate their guess
@@ -44,7 +45,7 @@ function myMap() {
   const mrk1 = new google.maps.Marker({ position: place_deserialized, map })
   const mrk2 = new google.maps.Marker({ position: guess_deserialized, map, icon: image })
 
-  //Calculate distance between markers in kilometers and displays it
+  // Calculate distance between markers in kilometers and displays it
   const distance = Math.round(haversine_distance(mrk1, mrk2))
   document.getElementById('msg').innerHTML = 'Your guess was off by ' + distance + ' kilometers.'
 
@@ -54,10 +55,5 @@ function myMap() {
   document.getElementById('scorebar').style.setProperty('--score-percentage', `${( score / 5000 ) * 100}%`);
 }
 
-// declare global {
-//   interface Window {
-//     myMap: () => void
-//   }
-// }
 window.myMap = myMap
 export {}
