@@ -50,7 +50,6 @@ function myMap(): void {
     // Create street view
     const panorama = new google.maps.StreetViewPanorama(
       document.getElementById("pano") as HTMLElement, {
-        // position: new google.maps.LatLng(43.723109, 10.396403),
         position: places[place],
         pov: {
           heading: 34,
