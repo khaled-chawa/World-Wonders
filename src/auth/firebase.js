@@ -1,6 +1,7 @@
 // Import functions
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithRedirect, signOut } from "firebase/auth";
+import { setDoc, collection, getFirestore, doc, addDoc, GeoPoint } from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -14,28 +15,33 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Sign in with google
-const provider = new GoogleAuthProvider();
+const provider = new GoogleAuthProvider(app);
 
 // Use the authentication service
-const auth = getAuth()
+const auth = getAuth(app)
 auth.useDeviceLanguage()
 
 // Listen for sign in/out
 // If signed in, get profile pic and display sign out button
 let signedIn
 const signout = document.getElementById('signOut')
+const history = document.getElementById('history')
 
 auth.onAuthStateChanged(user => {
   if (user) {
     signedIn = true
     localStorage.setItem('profilePic', JSON.stringify(user.photoURL))
+    localStorage.setItem('uid', user.uid)
     signout.style.display = 'initial'
+    history.style.display = 'initial'
+    console.log(user)
   } else {
     signedIn = false
     signout.style.display = 'none'
+    history.style.display = 'none'
   }
 })
 
@@ -60,3 +66,5 @@ signout.addEventListener('click', async () => {
   signOut(auth)
   popup.classList.add('is-active')
 })
+
+export { app }

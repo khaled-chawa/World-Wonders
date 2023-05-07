@@ -17,6 +17,23 @@ const colosseum = { lat: 41.891787, lng: 12.491410 }
 const angkorWat = { lat: 13.412421, lng: 103.868274 }
 
 const places =  [
+  'Leaning Tower Of Pisa',
+  'Burj Khalifa',
+  'Eiffel Tower',
+  'Statue Of Liberty',
+  'Taj Mahal',
+  'Golden Gate Bridge',
+  'Pyramids',
+  'Rio De Janero',
+  'Pigeon Rocks',
+  'Gardens By The Bay',
+  'St. Basils Cathedral',
+  'Mt. Fuji',
+  'Colosseum',
+  'AngkorWat'
+]
+
+const places_coords =  [
   leaningTowerOfPisa,
   burjKhalifa,
   eiffelTower,
@@ -32,10 +49,10 @@ const places =  [
   colosseum,
   angkorWat
 ]
-const place = Math.round(Math.random() * places.length)
-const place_serialized = JSON.stringify(places[place])
+const place = Math.round(Math.random() * places_coords.length)
+const place_serialized = JSON.stringify(places_coords[place])
 localStorage.setItem('location', place_serialized)
-
+localStorage.setItem('location_name', places[place])
 
 function myMap(): void {
     // Create new map
@@ -50,7 +67,7 @@ function myMap(): void {
     // Create street view
     const panorama = new google.maps.StreetViewPanorama(
       document.getElementById("pano") as HTMLElement, {
-        position: places[place],
+        position: places_coords[place],
         pov: {
           heading: 34,
           pitch: 10,

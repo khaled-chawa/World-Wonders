@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>score</title>
+    <title>Document</title>
+    <script src="../auth/firebase.js" type="module"></script>
+    <script src="../script.js" type="module"></script>
     <script src="./script.js" type="module"></script>
-    <script src="../script.js"  type="module"></script>
-    <script src="../auth/firebase.js"  type="module"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,27 +18,20 @@
     <nav class="nav">
         <button onclick="document.location='../index.html'">Home</button>
         <button onclick="document.location='../contactPage/index.html'">Contact</button>
-        <button id="play" >Play</button>
-        <button id="history" onclick="document.location='../historyPage/index.html'">History</button>
+        <button id="play">Play</button>
+        <button id="history">History</button>
         <button id="signOut">Sign Out</button>
     </nav>
-
-    <div id="msg"></div>
-
-    <div id="googleMap"></div>
-
-    <div id="points"></div>
-
-    <div id="scorebar"></div>
 
     <div class="popup">
         <span class="signedOut">You have been signed out.</span>
         <button class="okay">Got it</button>
     </div>
-    
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo82RMI9Mc-mXNnr-ZyxH8TaXN2q0LrPk&callback=myMap"
-    defer
-    ></script>
+
+    <div class="container">
+        <ul id="list">
+
+        </ul>
+    </div>
 </body>
 </html>

@@ -1,3 +1,6 @@
+import { app } from "../auth/firebase";
+import { collection, getFirestore, addDoc, GeoPoint } from 'firebase/firestore'
+
 // Calculate distance in kilometers between two coordinates
 function haversine_distance(mk1, mk2) {
   var R = 6371.0710; // Radius of the Earth in kilometers
@@ -10,18 +13,22 @@ function haversine_distance(mk1, mk2) {
   return d;
 }
 
-function myMap() {
-  // Get location and guess coords, and profile picture from local storage
-  const place = localStorage.getItem('location')
-  const guess = localStorage.getItem('guess')
-  const profilePic = localStorage.getItem('profilePic')
-  
-  //  Convert from string to object
-  const place_deserialized = JSON.parse(place)
-  const guess_deserialized = JSON.parse(guess)
-  const profilePic_deserialized = JSON.parse(profilePic)
+// Get location and guess coords, and profile picture from local storage
+const place = localStorage.getItem('location')
+const guess = localStorage.getItem('guess')
+const profilePic = localStorage.getItem('profilePic')
 
-  
+//  Convert from string to object
+const place_deserialized = JSON.parse(place)
+const guess_deserialized = JSON.parse(guess)
+const profilePic_deserialized = JSON.parse(profilePic)
+
+// Get location name
+const location_name = localStorage.getItem('location_name')
+
+let score
+
+function myMap() {
   // Create map
   const map = new google.maps.Map(
     document.getElementById("googleMap"),
@@ -47,13 +54,28 @@ function myMap() {
 
   // Calculate distance between markers in kilometers and displays it
   const distance = Math.round(haversine_distance(mrk1, mrk2))
-  document.getElementById('msg').innerHTML = 'Your guess was off by ' + distance + ' kilometers.'
+  document.getElementById('msg').innerHTML = `The correct location was ${location_name}. Your guress was off by ${distance} kilometers.`
 
   // Points system
-  const score = Math.round(Math.pow(Math.E, ((-distance/1000) + Math.log(5))) * 1000)
+  score = Math.round(Math.pow(Math.E, ((-distance/1000) + Math.log(5))) * 1000)
   document.getElementById('points').innerHTML = score + ' points'
   document.getElementById('scorebar').style.setProperty('--score-percentage', `${( score / 5000 ) * 100}%`);
+
+  addToDatabase()
 }
 
 window.myMap = myMap
-export {}
+
+const db = getFirestore(app)
+
+async function addToDatabase() {
+  const docRef = await addDoc(collection(db, "users", localStorage.getItem('uid'), "history"), {
+    location_name: location_name,
+    location: new GeoPoint(place_deserialized.lat, place_deserialized.lng),
+    guess: new GeoPoint(guess_deserialized.lat, guess_deserialized.lng),
+    score: score
+  });
+  console.log("Document written with ID: ", docRef.id);
+}
+
+export { addToDatabase }
