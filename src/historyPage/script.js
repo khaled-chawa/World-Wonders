@@ -1,12 +1,15 @@
 import { app } from '../auth/firebase.js'
 import { getFirestore, getDocs, collection } from 'firebase/firestore'
 
+// Initialize database
 const db = getFirestore(app)
 
+// Save the location where the documents are stored in the database
 const colRef = collection(db, 'users', localStorage.getItem('uid'), 'history')
 
 let history = []
 
+// Get the user's history and store it in an array
 await getDocs(colRef)
     .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
@@ -17,9 +20,11 @@ await getDocs(colRef)
         console.log(err.message)
     })
 
-
+// Get list element from HTML
 const list = document.getElementById('list')
 
+// Create a list of lists in the HTML
+// The inner lists are where the information about the user's history will be displayed
 for (let i = 0; i < history.length; i++) {
     const li = document.createElement('li')
     li.classList.add('list1')
