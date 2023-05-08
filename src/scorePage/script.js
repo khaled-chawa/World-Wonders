@@ -77,5 +77,4 @@ async function addToDatabase() {
   });
   console.log("Document written with ID: ", docRef.id);
 }
-
 export { addToDatabase }
