@@ -75,6 +75,6 @@ async function addToDatabase() {
     guess: new GeoPoint(guess_deserialized.lat, guess_deserialized.lng),
     score: score
   })
+  console.log(docRef.id)
 }
-
 export { addToDatabase }
