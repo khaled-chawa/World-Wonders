@@ -25,7 +25,8 @@ const auth = getAuth(app)
 auth.useDeviceLanguage()
 
 // Listen for sign in/out
-// If signed in, get profile pic and display sign out button
+// If signed in, set variable 'signedIn' to true, get profile pic, and display sign out and history buttons
+// Else, set variable 'signedIn' to false and hide signout and history buttons
 let signedIn
 const signout = document.getElementById('signOut')
 const history = document.getElementById('history')
@@ -67,4 +68,5 @@ signout.addEventListener('click', async () => {
   popup.classList.add('is-active')
 })
 
+// Exporting app for use when setting up databse later
 export { app }
