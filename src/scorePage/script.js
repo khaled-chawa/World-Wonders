@@ -9,8 +9,8 @@ function haversine_distance(mk1, mk2) {
   var difflat = rlat2-rlat1; // Radian difference (latitudes)
   var difflon = (mk2.position.lng()-mk1.position.lng()) * (Math.PI/180); // Radian difference (longitudes)
 
-  var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
-  return d;
+  var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)))
+  return d
 }
 
 // Get location and guess coords, and profile picture from local storage
@@ -59,7 +59,7 @@ function myMap() {
   // Points system
   score = Math.round(Math.pow(Math.E, ((-distance/1000) + Math.log(5))) * 1000)
   document.getElementById('points').innerHTML = score + ' points'
-  document.getElementById('scorebar').style.setProperty('--score-percentage', `${( score / 5000 ) * 100}%`);
+  document.getElementById('scorebar').style.setProperty('--score-percentage', `${( score / 5000 ) * 100}%`)
 
   addToDatabase()
 }
@@ -74,7 +74,7 @@ async function addToDatabase() {
     location: new GeoPoint(place_deserialized.lat, place_deserialized.lng),
     guess: new GeoPoint(guess_deserialized.lat, guess_deserialized.lng),
     score: score
-  });
-  console.log("Document written with ID: ", docRef.id);
+  })
 }
+
 export { addToDatabase }
