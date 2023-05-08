@@ -65,9 +65,9 @@ function myMap() {
 }
 
 window.myMap = myMap
-
+// set up database
 const db = getFirestore(app)
-
+// function that adds a new document to the database using the user's email uid as a unique ID
 async function addToDatabase() {
   const docRef = await addDoc(collection(db, "users", localStorage.getItem('uid'), "history"), {
     location_name: location_name,
