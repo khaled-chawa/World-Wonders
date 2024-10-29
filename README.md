@@ -41,7 +41,7 @@ cd World-Wonder
 If I ever choose to come back to this project I would:
  1. Add more sign in options.
  2. Add different difficulty levels with different locations around the world.
- 3. Add optoins for learning, for example if someone wanted to learn the different biomes/landscapes that can be found in a certain region the game would should pictures of that region and they would have to guess where in the area they are.
+ 3. Add optoins for learning, for example if someone wanted to learn the different biomes/landscapes that can be found in a certain region the game would show pictures of that region and they would have to guess where in the area they are.
  4. Add a multiplayer game mode so a teacher can set up a game in their classroom like [Kahoot](https://kahoot.com/) where all the students would use a code to enter the game and after each image is displayed the teacher's screen would show all the students' guesses and then their scores.
 
 ## Contributing
