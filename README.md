@@ -26,10 +26,12 @@ cd World-Wonder
  2. Install the dependencies
 ```npm install```
 
- 3. Start the development server:
-```npm start```
+ 3. Replace 'ENTER YOUR API KEY HERE' with your Google API key in the index.html files in the historyPage and gamePage folders.
 
- 4. Open your browser and go to `http://localhost:3000` to access the app.
+ 4. Start the development server:
+```npm run dev```
+
+ 5. Open your browser and go to `http://localhost:5173` to access the app.
 
 ## Usage
  1. Press on the burger menu in the top right and hit 'play'. This will redirect you to a google sign-in page. Complete the sign in using your gmail account.

@@ -1,7 +1,6 @@
 // Import functions
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, getAuth, signInWithRedirect, signOut } from "firebase/auth";
-import { setDoc, collection, getFirestore, doc, addDoc, GeoPoint } from 'firebase/firestore'
+import { getAuth, GoogleAuthProvider, signInWithRedirect, signOut } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -68,5 +67,5 @@ signout.addEventListener('click', async () => {
   popup.classList.add('is-active')
 })
 
-// Exporting app for use when setting up databse later
-export { app }
+// Exporting app for use when setting up database later
+export { app };
