@@ -4,7 +4,7 @@ import { getAuth, GoogleAuthProvider, signInWithRedirect, signOut } from "fireba
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBKsMlqlC-lEvcnzKREFJIvDqr2DIkqN_U",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "schoolnea-110b0.firebaseapp.com",
   projectId: "schoolnea-110b0",
   storageBucket: "schoolnea-110b0.appspot.com",

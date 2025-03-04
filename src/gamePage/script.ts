@@ -1,3 +1,13 @@
+// Retrieve the Google Maps API key from environment variables
+const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
+// Create the script element for the Google Maps API
+const script = document.createElement('script');
+script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=myMap`;
+script.defer = true;
+document.body.appendChild(script);
+
+
 let markers: google.maps.Marker[] = []
 let coords_serialized: string
 
