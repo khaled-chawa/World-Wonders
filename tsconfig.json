@@ -15,7 +15,7 @@
     "noImplicitReturns": true,
     "skipLibCheck": true,
     "allowJs": true,
-    "types": ["vite/client"]
+    "types": ["vite/client", "@types/google.maps"]
   },
   "include": [
     "src",
